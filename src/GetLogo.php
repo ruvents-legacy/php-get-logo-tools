@@ -29,7 +29,7 @@ final class GetLogo
      */
     public static function parse(string $url): array
     {
-        if (preg_match("~^(?:http://getlogo\.org/img)?(?'id'/\w+/\d+)/(?'width'\d+)?x(?'height'\d+)?/$~", $url, $m)) {
+        if (preg_match("~^(?:http://getlogo\.org/img)?(?'id'/[\w-]+/\d+)/(?'width'\d+)?x(?'height'\d+)?/$~", $url, $m)) {
             unset($m[0]);
 
             return $m;
