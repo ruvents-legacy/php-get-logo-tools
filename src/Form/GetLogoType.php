@@ -40,7 +40,7 @@ class GetLogoType extends AbstractType implements DataTransformerInterface
      */
     public function transform($value)
     {
-        return $value;
+        return null === $value ? '' : $value;
     }
 
     /**
@@ -48,7 +48,11 @@ class GetLogoType extends AbstractType implements DataTransformerInterface
      */
     public function reverseTransform($value)
     {
-        if (preg_match('~^/\w+/\d+$~',$value)) {
+        if (empty($value)) {
+            return null;
+        }
+
+        if (preg_match('~^/\w+/\d+$~', $value)) {
             return $value;
         }
 
