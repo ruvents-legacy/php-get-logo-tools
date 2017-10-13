@@ -21,7 +21,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Ruvents\\TwigExtensions\\": "tests/"
+            "Ruvents\\GetLogoTools\\": "tests/"
         }
     },
     "config": {
@@ -33,5 +33,8 @@
         "branch-alias": {
             "dev-master": "0.1-dev"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
     }
 }

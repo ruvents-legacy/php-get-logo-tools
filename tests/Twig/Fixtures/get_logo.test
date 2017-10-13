@@ -1,0 +1,27 @@
+--TEST--
+"get_logo" function
+
+--TEMPLATE--
+{% for item in array %}
+    {{- get_logo(item.id, item.width, item.height) }}
+{% endfor %}
+
+--DATA--
+return [
+    'array' => [
+        'data1' => [
+            'id' => 'raec/379',
+            'width' => '200',
+            'height' => null
+        ],
+        'data2' => [
+            'id' => 'np-mks/1238',
+            'width' => null,
+            'height' => 301
+        ]
+    ]
+];
+
+--EXPECT--
+http://getlogo.org/img/raec/379/200x/
+http://getlogo.org/img/np-mks/1238/x301/
