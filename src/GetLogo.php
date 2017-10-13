@@ -18,7 +18,7 @@ final class GetLogo
             throw new \InvalidArgumentException('You must provide either width or height.');
         }
 
-        return 'http://getlogo.org/img'.$id.'/'.$width.'x'.$height.'/';
+        return 'http://getlogo.org/img/'.ltrim($id, '/').'/'.$width.'x'.$height.'/';
     }
 
     /**
@@ -29,10 +29,12 @@ final class GetLogo
      */
     public static function parse(string $url): array
     {
-        if (preg_match("~^(?:http://getlogo\.org/img)?(?'id'/[\w-]+/\d+)/(?'width'\d+)?x(?'height'\d+)?/$~", $url, $m)) {
-            unset($m[0]);
-
-            return $m;
+        if (preg_match("~^(?:http://getlogo\.org/img)?(/[\w-]+/\d+)/(\d+)?x(\d+)?/$~", $url, $m)) {
+            return [
+                'id' => $m[1],
+                'width' => isset($m[2]) ? (int)$m[2] : null,
+                'height' => isset($m[3]) ? (int)$m[3] : null,
+            ];
         }
 
         throw new \InvalidArgumentException('Invalid GetLogo url.');
