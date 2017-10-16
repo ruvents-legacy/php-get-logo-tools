@@ -2,7 +2,9 @@
 
 namespace Ruvents\GetLogoTools;
 
-class GetLogoTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class GetLogoTest extends TestCase
 {
     public function testGetUrl()
     {
@@ -34,7 +36,7 @@ class GetLogoTest extends \PHPUnit_Framework_TestCase
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Invalid GetLogo url.
      */
-    public function testParseException($url, $expected)
+    public function testParseException($url)
     {
         GetLogo::parse($url);
     }
