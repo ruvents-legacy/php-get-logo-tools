@@ -56,8 +56,4 @@ class GetLogoTest extends TestCase
             ['http://getlogo.org/imgraec/379/200x/', ['id' => '/raec/379', 'width' => 200, 'height' => null]],
         ];
     }
-
-    public function testPrivateConstructor()
-    {
-    }
 }
