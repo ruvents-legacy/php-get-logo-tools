@@ -46,6 +46,7 @@ class GetLogoTest extends TestCase
         return [
             ['http://getlogo.org/img/raec/379/200x/', ['id' => '/raec/379', 'width' => 200, 'height' => null]],
             ['http://getlogo.org/img/np-mks/1238/x301/', ['id' => '/np-mks/1238', 'width' => null, 'height' => 301]],
+            ['http://getlogo.org/img/np.mks/1238/x301/', ['id' => '/np.mks/1238', 'width' => null, 'height' => 301]],
         ];
     }
 
@@ -58,6 +59,5 @@ class GetLogoTest extends TestCase
 
     public function testPrivateConstructor()
     {
-
     }
 }
