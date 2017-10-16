@@ -1,8 +1,9 @@
 <?php
 
 use Ruvents\GetLogoTools\Twig\GetLogoExtension;
+use Twig\Test\IntegrationTestCase;
 
-class GetLogoExtensionTest extends Twig_Test_IntegrationTestCase
+class GetLogoExtensionTest extends IntegrationTestCase
 {
     public function getExtensions()
     {
