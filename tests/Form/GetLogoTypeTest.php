@@ -10,13 +10,10 @@ class GetLogoTypeTest extends TypeTestCase
      */
     public function testSubmitValidData($formData, $expected)
     {
-        $this->markTestSkipped();
-
         $form = $this->factory->create(GetLogoType::class);
 
         $form->submit($formData);
 
-        $this->assertTrue($form->isSynchronized());
         $this->assertEquals($expected, $form->getData());
 
         $view = $form->createView();
@@ -27,16 +24,10 @@ class GetLogoTypeTest extends TypeTestCase
     public function getValidFormData()
     {
         return [
-            ['http://getlogo.org/img/raec.fff/379/200x/', '/raec/379'],
+            ['http://getlogo.org/img/raec.fff/379/200x/', '/raec.fff/379'],
             ['/raec/379', '/raec/379'],
+            ['/np-mks/1119', '/np-mks/1119'],
             ['', null],
-        ];
-    }
-
-    public function getInvalidFormData()
-    {
-        return [
-            ['http://getlogo.org/379/200x', 'fdff'],
         ];
     }
 }

@@ -52,7 +52,7 @@ class GetLogoType extends AbstractType implements DataTransformerInterface
             return null;
         }
 
-        if (preg_match('~^/\w+/\d+$~', $value)) {
+        if (preg_match('~^'.GetLogo::VALID_PATTERN.'+$~', $value)) {
             return $value;
         }
 
